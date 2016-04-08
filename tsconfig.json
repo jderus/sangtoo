@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "outDir": "dist",
-    "rootDir": ".",
+    "target": "es6",
+    "module": "system",
+    "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node"
+    "removeComments": false,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "rootDir": "."
   },
   "exclude": [
     "typings/main.d.ts",

@@ -1,6 +1,6 @@
 {
-  "name": "angular2-seed",
-  "version": "1.0.0",
+  "name": "sangtoo",
+  "version": "0.0.1",
   "description": "A simple starter Angular2 project",
   "scripts": {
     "typings-install": "./node_modules/.bin/typings install",
