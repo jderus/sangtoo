@@ -3,31 +3,37 @@
   "version": "0.0.1",
   "description": "A simple starter Angular2 project",
   "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "typings-install": "./node_modules/.bin/typings install",
     "postinstall": "npm run typings-install",
     "build": "./node_modules/.bin/webpack --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
-    "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "tsc": "tsc"
   },
-  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-beta.13",
+    "systemjs": "0.19.25",
+    "core-js": "^2.2.0",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "~0.6.6"
+  },
   "devDependencies": {
     "awesome-typescript-loader": "~0.16.2",
-    "es6-promise": "3.0.2",
-    "es6-shim": "0.35.0",
+    "concurrently": "^2.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
     "jasmine-core": "2.4.1",
-    "reflect-metadata": "0.1.2",
+    "lite-server": "^2.2.0",
     "source-map-loader": "^0.1.5",
     "typescript": "~1.8.9",
     "typings": "^0.7.9",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.8.4"
-  },
-  "dependencies": {
-    "angular2": "2.0.0-beta.13",
-    "core-js": "^2.2.0",
-    "rxjs": "5.0.0-beta.2",
-    "zone.js": "~0.6.6"
+    "webpack-merge": "^0.8.4",
+    
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.35.0",
+    "reflect-metadata": "0.1.2"
+    
   }
 }
