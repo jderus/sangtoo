@@ -3,12 +3,17 @@
   "version": "0.0.1",
   "description": "A simple starter Angular2 project",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
-    "typings-install": "./node_modules/.bin/typings install",
-    "postinstall": "npm run typings-install",
+    "origstart": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "build": "./node_modules/.bin/webpack --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
-    "tsc": "tsc"
+    
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server -c lite-server-config.json",
+    "typings-install": "./node_modules/.bin/typings install",
+    "postinstall": "npm run typings-install"
+    
   },
   "dependencies": {
     "angular2": "2.0.0-beta.13",
