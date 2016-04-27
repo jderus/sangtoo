@@ -23,14 +23,14 @@
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
-        packages: {        
-          app: {
-            format: 'register',
+        packages: { 
+          src: {
+            //format: 'register',
             defaultExtension: 'js'
           }
         }
       });
-      System.import('src/app.js')
+      System.import('src/app')
             .then(null, console.error.bind(console));
     </script>
   </head>
