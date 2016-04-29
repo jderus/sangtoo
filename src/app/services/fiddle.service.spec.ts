@@ -17,4 +17,9 @@ describe('fiddle.service', () => {
         expect(fiddle.getData).toBeDefined();
   });
   
+  it('should return true for getData', function () {
+        let value = fiddle.getData();
+        expect(value).toBe(true);
+  });
+  
 });
