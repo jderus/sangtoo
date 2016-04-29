@@ -2,4 +2,28 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 export class FiddleService {
+    getData() {
+        return true;
+    } 
+    
+    //original to port
+    // function getData() {
+    //     var url = "http://jsonplaceholder.typicode.com/posts";
+    //     return $resource(url).query();
+    // }
+    
+    
+    //Fake note
+    // getHero(id: number) {
+    //     return Promise.resolve(HEROES).then(
+    //         heroes => heroes.filter(hero => hero.id === id)[0]
+    //     );
+    // }
+    
+    //Fake timing
+    // getHeroesSlowly() {
+    // return new Promise<Hero[]>(resolve =>
+    //     setTimeout(()=>resolve(HEROES), 2000) // 2 seconds
+    // );
+    // }
 }
