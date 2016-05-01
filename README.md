@@ -2,7 +2,8 @@
 sandbox for ng2
 
 ## TODO
+* Validate the comp is setup correctly
 * Gulpify this
+* extend unit testing approach.
 * Bridge gap between quickstart and this
-* Forget the seed, make the details work
 * Toolchain flow to dist
