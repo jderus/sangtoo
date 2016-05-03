@@ -9,5 +9,6 @@ sandbox for ng2
 * Toolchain flow to dist
 * travis testing
 * karma running?
+* promises/observables in ng2/ts
 
 
