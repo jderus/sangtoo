@@ -14,8 +14,16 @@ describe('toy.component', () => {
     expect(toy.title).toBeDefined();
   });
   
+  it ('has a default title', () => {
+    expect(toy.title).toBe('Default Title');
+  });
+  
   it ('has a text', () => {
     expect(toy.title).toBeDefined();
+  });
+  
+  it ('has a default text', () => {
+    expect(toy.text).toBe('Default Text');
   });
   
 });
