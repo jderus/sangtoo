@@ -5,13 +5,13 @@ import { Component } from 'angular2/core';
   templateUrl: 'src/app/components/toy.component.html'
 })
 export class ToyComponent {
-    public title: string;
+    public title :string;
     public text: string;
     public data;
     
     constructor() {
-        this.title = 'Toy Title';
-        this.text = 'Test Text';
+        this.title = 'Default Title';
+        this.text = 'Default Text';
     }
     
 }
