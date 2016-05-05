@@ -3,10 +3,11 @@ import {Http, HTTP_PROVIDERS, Response} from 'angular2/http';
 import {  
     expect, 
     it, 
+    inject,
     describe,
     injectAsync,
     TestComponentBuilder,
-    beforeEachProvider
+    beforeEachProviders
 } from 'angular2/testing';
 
 describe('fiddle.service', () => {
