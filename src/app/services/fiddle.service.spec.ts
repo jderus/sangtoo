@@ -1,11 +1,31 @@
 import {FiddleService} from './fiddle.service';
+import {Http, HTTP_PROVIDERS, Response} from 'angular2/http';
+import {  
+    expect, 
+    it, 
+    inject,
+    describe,
+    injectAsync,
+    TestComponentBuilder,
+    beforeEachProviders
+} from 'angular2/testing';
 
 describe('fiddle.service', () => {
   let fiddle: FiddleService;
   
-  beforeEach(()=>{
-    fiddle = new FiddleService(); 
-  });
+  beforeEachProviders(() => [
+    HTTP_PROVIDERS, 
+    FiddleService
+  ]);
+  
+  beforeEach(inject([FiddleService], s => {
+    fiddle = s;
+  }));
+  
+  //crude implementation
+  //beforeEach(()=>{
+  //  fiddle = new FiddleService(); 
+  //});
   
   it('true is true', () => expect(true).toEqual(true));
   
