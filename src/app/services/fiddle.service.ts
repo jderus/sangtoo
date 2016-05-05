@@ -4,8 +4,12 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class FiddleService {
+    
+    constructor(private http:Http) {}
+    
     getData() {
-        return true;
+        return this.http.get("http://jsonplaceholder.typicode.com/posts")
+                   .map((res:Response) => res.json());
     } 
     
     //original to port
