@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import {FiddleService} from '../services/fiddle.service';
 
 @Component({
   selector: 'sang-toy',
