@@ -18,9 +18,10 @@ describe('fiddle.service', () => {
     FiddleService
   ]);
   
-  beforeEach(inject([FiddleService], s => {
-    fiddle = s;
-  }));
+  // would like to get rid of redundant inject, but this is giving a ts error.
+  // beforeEach(inject([FiddleService], s => {
+  //   fiddle = s;
+  // }));
   
   //crude implementation
   //beforeEach(()=>{
@@ -29,17 +30,24 @@ describe('fiddle.service', () => {
   
   it('true is true', () => expect(true).toEqual(true));
   
-  it('should inject the service',()=> {
+  it('should inject the service', inject([FiddleService], (fiddle: FiddleService)=> {
         expect(fiddle).toBeDefined();
-  });
+  }));
   
-  it('should have the getData call', function () {
+  it('should have the getData call', inject([FiddleService], (fiddle: FiddleService)=> {
         expect(fiddle.getData).toBeDefined();
-  });
+  }));
   
-  it('should return true for getData', function () {
-        let value = fiddle.getData();
-        expect(value).toBe(true);
-  });
+  it('should return true for getData', inject([FiddleService], (fiddle: FiddleService)=>{
+        // let value = fiddle.getData();
+        // expect(value).toBe(true);
+      fiddle.getData().subscribe(x => { 
+      expect(x.length).toBeGreaterThan(0);
+      
+      //this doesnt work because we cant inject in beforeEach, and I can't figure out how to do both inline
+      //done(); 
+    });
+        
+  }));
   
 });
