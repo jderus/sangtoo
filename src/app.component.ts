@@ -5,6 +5,7 @@ import {ToyComponent} from './app/components/toy.component';
     selector: 'sang',
     directives:  [ToyComponent],
     template: `<h1>Sangtoo is Alive!</h1>
+               <hr />
                <sang-toy></sang-toy>
               `
               
