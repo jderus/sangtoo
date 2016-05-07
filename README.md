@@ -2,6 +2,7 @@
 sandbox for ng2
 
 ## TODO
+* Boostrap this!
 * Validate the comp is setup correctly
 * Gulpify this
 * extend unit testing approach.
