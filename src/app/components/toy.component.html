@@ -1,40 +1,52 @@
 <div>
-    {{title}}
-    <input type="text" [(ngModel)]="text" />
-    <h1>Hello {{text}}</h1>
-    <br>
+    <h1>{{title}}</h1>
+    <h4>{{text}}</h4>
+    <br />
+    Subtext: <input type="text" [(ngModel)]="text" />
+    <br />
+    <br />
 </div>
-<form>
-    <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input type="text" class="form-control" placeholder="Search da datas" ng-model="searchGrid">
-        </div>      
+<div class="row">
+    <div class="col-lg-8">
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control" placeholder="Search da datas" ng-model="searchGrid">
+                </div>      
+            </div>
+        </form>
     </div>
-</form>\
-<table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-        <td>
-            <a href="#" ng-click="sortType = 'id'; sortReverse = !sortReverse ">
-            ID 
-            <span ng-show="sortType == 'id' && !sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="sortType == 'id' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </td>
-        <td>
-            <a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
-            Title 
-            <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </td>
-    </tr>
-    </thead> 
-    <tbody>
-        <tr ng-repeat="item in fakedata | orderBy:sortType:sortReverse | filter:searchGrid">
-            <td class="text-danger">{{item.id}}</td>
-            <td>{{item.title}}</td>
-        </tr>
-    </tbody>
-</table>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td>
+                    <a href="#">
+                    ID 
+                    <!--<span ng-show="sortType == 'id' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'id' && sortReverse" class="fa fa-caret-up"></span>-->
+                    </a>
+                </td>
+                <td>
+                    <a href="#">
+                    Title 
+                    <!--<span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>-->
+                    </a>
+                </td>
+            </tr>
+            </thead> 
+            <tbody>
+                <tr *ngFor="#item of data">
+                    <td class="text-danger">{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
