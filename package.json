@@ -10,10 +10,10 @@
     "lite": "lite-server",
     "typings-install": "./node_modules/.bin/typings install",
     "postinstall": "npm run typings-install",
-    
     "live": "live-server",
-    "test:w": "concurrent \"npm run tsc:w\" \"npm run test\" "
-
+    "test:w": "concurrent \"npm run tsc:w\" \"npm run test\" ",
+    
+        "test:k": "karma start karma.conf.js"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.17",
@@ -27,12 +27,16 @@
   "devDependencies": {
     "concurrently": "^2.0.0",
     "del": "^2.2.0",
-
     "gulp": "^3.9.1",
+    "gulp-karma": "0.0.5",
     "jasmine-core": "2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
     "lite-server": "^2.2.0",
     "live-server": "^1.0.0",
-
+    "remap-istanbul": "^0.6.3",
     "typescript": "~1.8.9",
     "typings": "^0.8.1"
   }

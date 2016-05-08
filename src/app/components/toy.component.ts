@@ -9,10 +9,18 @@ export class ToyComponent {
     public title :string;
     public text: string;
     public data;
+    public err:Boolean = false;
     
-    constructor() {
+    constructor(private _fiddleService: FiddleService) {
         this.title = 'Default Title';
         this.text = 'Default Text';
+        this.getData();
     }
     
+    getData() {
+        this._fiddleService.getData().subscribe(
+          data => { this.data = data },
+          err  => { this.err = true }  
+        );
+    }
 }
