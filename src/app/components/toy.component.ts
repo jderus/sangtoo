@@ -11,6 +11,10 @@ export class ToyComponent {
     public data;
     public err:Boolean = false;
     
+    public sortType: string     = 'id';
+    public sortReverse: Boolean = false;
+    public searchGrid: string   = '';
+    
     constructor(private _fiddleService: FiddleService) {
         this.title = 'Default Title';
         this.text = 'Default Text';
