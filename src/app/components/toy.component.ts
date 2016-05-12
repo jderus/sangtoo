@@ -1,8 +1,11 @@
 import { Component } from 'angular2/core';
 import {FiddleService} from '../services/fiddle.service';
+import {MyUppercasePipe} from '../pipes/my-uppercase.pipe';
+import {SangSearchPipe} from '../pipes/sang-search.pipe';
 
 @Component({
   selector: 'sang-toy',
+  pipes: [MyUppercasePipe, SangSearchPipe],
   templateUrl: 'src/app/components/toy.component.html'
 })
 export class ToyComponent {
@@ -13,7 +16,7 @@ export class ToyComponent {
     
     public sortType: string     = 'id';
     public sortReverse: Boolean = false;
-    public searchGrid: string   = '';
+    public searchGrid;
     
     constructor(private _fiddleService: FiddleService) {
         this.title = 'Default Title';
