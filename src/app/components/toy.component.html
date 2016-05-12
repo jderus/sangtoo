@@ -1,6 +1,7 @@
 <div>
     <h1>{{title}}</h1>
     <h4>{{text}}</h4>
+    {{text | myuppercase}}
     <br />
     Subtext: <input type="text" [(ngModel)]="text" />
     <br />
@@ -12,11 +13,12 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-search"></i></div>
-                    <input type="text" class="form-control" placeholder="Search da datas" ng-model="searchGrid">
+                    <input type="text" class="form-control" placeholder="Search da datas" [(ngModel)]="searchGrid">
                 </div>      
             </div>
         </form>
     </div>
+    {{searchGrid}} 
 </div>
 
 <div class="row">
@@ -41,7 +43,7 @@
             </tr>
             </thead> 
             <tbody>
-                <tr *ngFor="let item of data">
+                <tr *ngFor="let item of data | sangSearch:{title: searchGrid}">
                     <td class="text-danger">{{item.id}}</td>
                     <td>{{item.title}}</td>
                 </tr>
