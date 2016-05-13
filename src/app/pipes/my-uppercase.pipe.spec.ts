@@ -4,6 +4,9 @@ describe('MyUppercasePipe', () => {
   beforeEach(() => {
     pipe = new MyUppercasePipe();
   });
+  it('transforms null to null', () => {
+    expect(pipe.transform(null)).toEqual(null);
+  });
   it('transforms "abc" to "ABC"', () => {
     expect(pipe.transform('abc')).toEqual('ABC');
   });

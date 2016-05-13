@@ -8,6 +8,7 @@ sandbox for ng2
 * filter pipe
 
 * Toolchain flow to dist
+* tsc with     "outDir"
 * Gulpify this
 * Extend unit testing approach.
 
