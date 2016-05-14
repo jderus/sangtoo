@@ -10,3 +10,14 @@ gulp.task("clean", function (cb) {
     del(["./dist/**"])
     return del(["./src/**/*.js*"]);
 });
+
+// Testing ----------------------------------------------------------------------------------------------------
+gulp.task('test', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true //set to false to debug tests
+    }, function (exitCode) {
+        done();
+    }).start();
+    
+});
