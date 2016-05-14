@@ -13,7 +13,7 @@
     "live": "live-server",
     "test:w": "concurrent \"npm run tsc:w\" \"npm run test\" ",
     
-        "test:k": "karma start karma.conf.js"
+        "test:k": "gulp test"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.17",

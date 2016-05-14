@@ -18,11 +18,13 @@ module.exports = function(config) {
             {pattern: 'karma-test-shim.js',                                  included: true, watched: true},
 
             // paths loaded via module imports
-            {pattern: 'dist/**/*.js', included: false, watched: true},
+            {pattern: 'src/**/*.js', included: false, watched: true},
+            // orig {pattern: 'dist/**/*.js', included: false, watched: true},
 
             // paths to support debugging with source maps in dev tools
             {pattern: 'src/**/*.ts', included: false, watched: false},
-            {pattern: 'dist/**/*.js.map', included: false, watched: false}
+            {pattern: 'src/**/*.js.map', included: false, watched: false}
+            // orig {pattern: 'dist/**/*.js.map', included: false, watched: false}
         ],
 
         // proxied base paths
@@ -54,7 +56,8 @@ module.exports = function(config) {
         // Source files that you wanna generate coverage for.
         // Do not include tests or libraries (these files will be instrumented by Istanbul)
         preprocessors: {
-            'dist/**/!(*spec).js': ['coverage']
+            'src/**/!(*spec).js': ['coverage']
+            // orig 'dist/**/!(*spec).js': ['coverage']
         },
 
         coverageReporter: {

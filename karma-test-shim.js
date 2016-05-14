@@ -10,7 +10,7 @@ __karma__.loaded = function() {};
 
 System.config({
     packages: {
-        'base/dist': {
+        'base/src': {
             defaultExtension: false,
             format: 'cjs',
             map: Object.keys(window.__karma__.files).filter(onlyAppFiles).reduce(createPathRecords, {})
@@ -35,7 +35,7 @@ function createPathRecords(pathsMapping, appPath) {
 }
 
 function onlyAppFiles(filePath) {
-    return /\/base\/dist\/(?!.*\.spec\.js$).*\.js$/.test(filePath);
+    return /\/base\/src\/(?!.*\.spec\.js$).*\.js$/.test(filePath);
 }
 
 function onlySpecFiles(path) {
