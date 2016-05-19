@@ -2,15 +2,15 @@
 sandbox for ng2
 
 ## TODO
-* promises/observables in ng2/ts
-* Fix Karma now that it is in the repo
+* Fix Karma now that it is in the repo (shims look to be the prob)
 * travis testing
-* filter pipe
+* bower as part of buildchain commands
 
 * Toolchain flow to dist
 * tsc with     "outDir"
 * Gulpify this
 * Extend unit testing approach.
+* D3/C3
 
 
 
