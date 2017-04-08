@@ -1,0 +1,36 @@
+[
+    {
+        "name" : "Data1",
+        "items": [
+            { "date": "Jan 2000", "value":64.56 },
+            { "date": "Feb 2000", "value":68.87 },
+            { "date": "Mar 2000", "value":67 },
+            { "date": "Apr 2000", "value":55.19},
+            { "date": "May 2000", "value":48.31},
+            { "date": "Jun 2000", "value":36.31},
+            { "date": "Jul 2000", "value":30.12},
+            { "date": "Aug 2000", "value":41.5},
+            { "date": "Sep 2000", "value":38.44},
+            { "date": "Oct 2000", "value":36.62},
+            { "date": "Nov 2000", "value":24.69},
+            { "date": "Dec 2000", "value":15.56}
+        ]
+    },
+    {
+        "name" : "Data2",
+        "items": [
+            { "date": "Jan 2001", "value":44.56 },
+            { "date": "Feb 2001", "value":8.87 },
+            { "date": "Mar 2001", "value":17 },
+            { "date": "Apr 2001", "value":55.19},
+            { "date": "May 2001", "value":48.31},
+            { "date": "Jun 2001", "value":36.31},
+            { "date": "Jul 2001", "value":30.12},
+            { "date": "Aug 2001", "value":31.5},
+            { "date": "Sep 2001", "value":28.44},
+            { "date": "Oct 2001", "value":36.62},
+            { "date": "Nov 2001", "value":14.69},
+            { "date": "Dec 2001", "value":15.56}
+        ]
+    }
+]
