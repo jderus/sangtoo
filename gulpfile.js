@@ -1,23 +1,28 @@
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
-//var config = require("./tools/gulptasks/config.js")();     // all of our configuration vars
+var gulp    = require('gulp');                              // gulp reference
+var plugins = require('gulp-load-plugins')();               // plugins to pass around
+var config  = require("./tools/gulp/config.js")();          // all of our configuration vars
+var del     = require('del');                               // deleting files (no rim-raf)
 
-var del = require('del');
+var sassdoc = require('sassdoc');                           // docsing for sass.
 
-var Server = require('karma').Server;
+// Use a function to get tasks defined in separate files and modules
+function getFileTask(task, param) {
+    if (param == undefined) {  return require(config.paths.gulptasks + task)(gulp, config, plugins); }
+    else { return require(config.paths.gulptasks + task)(gulp, config, plugins, param); }
+}
 
-gulp.task("clean", function (cb) {
-    del(["./dist/**"])
-    return del(["./src/**/*.js*"]);
-});
+// Gulp FileTasks ----------------------------------------------------------------------------------------------
+// Hello World Example as a Sanity Check
+gulp.task('hello'   , getFileTask('hello'))
 
-// Testing ----------------------------------------------------------------------------------------------------
-gulp.task('test', function (done) {
-    new Server({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true //set to false to debug tests
-    }, function (exitCode) {
-        done();
-    }).start();
-    
-});
+// Gulp FileTasks ----------------------------------------------------------------------------------------------
+gulp.task('sassdoc' , getFileTask('sassdoc', sassdoc));
+gulp.task('typedoc' , getFileTask('typedoc'));
+
+// Gulp Dependent FileTasks ------------------------------------------------------------------------------------
+// slight bug here with timing of sassdoc. ---------------------------------------------------------------------
+gulp.task('sassdocreport', ['sassdoc'], getFileTask('open', config.paths.sassdocDest + "index.html" ));
+gulp.task('typedocreport', ['typedoc'], getFileTask('open', config.paths.typedocDest + "index.html" ));
+gulp.task('docs',['sassdoc','typedoc']);
+
+
