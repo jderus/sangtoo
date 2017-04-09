@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
+        "json",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -17,8 +18,9 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "sang",
       "styles": [
+        "../node_modules/c3/c3.css",
         "styles.scss"
       ],
       "scripts": [],
