@@ -14,10 +14,16 @@ import { BaconService} from './services/bacon.service';
 })
 export class AppComponent {
     title = 'Sangtoo';
+    public search;
+    public sortType;
+    public sortReverse;
+
     public stubdata;
     public bacondata;
 
     constructor(private _stub:StubService, private _bacon:BaconService) {
+        this.sortType = "value";
+        this.sortReverse = false;
     }
 
     ngOnInit() {
@@ -27,7 +33,7 @@ export class AppComponent {
             () => {console.log('Stub GetData Completed'); console.log(this.stubdata);}
         );
 
-        this._bacon.GetData("meat-and-filler",1).subscribe(
+        this._bacon.GetData("meat-and-filler",3).subscribe(
             values => this.baconCallback(values),
             error => console.log(error),
             () => {console.log('Bacon GetData Completed'); console.log(this.bacondata);}
@@ -42,7 +48,6 @@ export class AppComponent {
         var items = _.take(it,1);
         console.log(items);
         this.stubdata = items[0]["items"];
-        this.stubdata = it;
         console.log(this.stubdata);
     }
 

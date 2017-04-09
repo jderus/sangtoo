@@ -5,9 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { FilterPipe } from 'app/pipes/filter.pipe';
+import { OrderByPipe } from 'app/pipes/orderBy.pipe';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+    FilterPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
